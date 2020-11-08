@@ -147,7 +147,7 @@ def next_player(id):
     game.next_user()
     red.set(game.id, game.toJSON())
     red.publish(id, game.visibleToJSON())
-    return jsonify({'success': True})
+    return jsonify({'success': True, 'user': game.current_user})
 
 
 @app.route('/discovered/<id>')
