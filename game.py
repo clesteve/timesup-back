@@ -36,8 +36,8 @@ class Game():
         Add a player to the player list
     """
 
-    def __init__(self, id=str(uuid4()), users=[], characters: dict = {}, teams: List[List[str]] = [], round=-1, admin="", submitted=[]):
-        self.id = id
+    def __init__(self, id="", users=[], characters: dict = {}, teams: List[List[str]] = [], round=-1, admin="", submitted=[]):
+        self.id = admin + "-" + datetime.now().strftime('%Hh%M')
         self.users = users
         self.characters = characters
         self.submitted = submitted
